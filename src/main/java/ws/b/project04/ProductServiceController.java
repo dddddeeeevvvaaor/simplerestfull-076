@@ -67,7 +67,7 @@ public class ProductServiceController { // class ProductServiceController
     @RequestMapping(value = "/products") // berfungsi untuk mengatur request mapping dengan mengatur value
     public ResponseEntity<Object> getProduct() { // berfungsi untuk mendeklarasikan variable getProduct dengan tipe data ResponseEntity dan menginisialisasikan variable tersebut dengan Object
         if (productRepo.isEmpty()) { // berfungsi untuk mengatur kondisi jika productRepo kosong
-            return new ResponseEntity<>("Product is not found", HttpStatus.NOT_FOUND); // berfungsi untuk mengembalikan nilai dari ResponseEntity
+            return new ResponseEntity<>("Product is null", HttpStatus.NOT_FOUND); // berfungsi untuk mengembalikan nilai dari ResponseEntity
         } // berfungsi untuk mengakhiri kondisi
         return new ResponseEntity<>(productRepo.values(), HttpStatus.OK); // berfungsi untuk mengembalikan nilai dari ResponseEntity
     } // berfungsi untuk menutup method getProduct
